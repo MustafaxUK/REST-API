@@ -23,4 +23,11 @@ def index():
 
 @app.route("/contacts")
 def get_contacts():
-    return {"email":"example@gmail.com"}
+    contacts = Contact.query.all()
+
+    output = []
+    for contact in contacts:
+        contact_data = {"phone_number": contact.phone_number, "name": contact.name, "email": contact.email}
+        output.append(contact_data)
+
+    return {"My Contacts":output}
