@@ -21,10 +21,17 @@ def get_contacts():
     for contact in contacts:
         contact_data = {"phone_number": contact.phone_number, "name": contact.name, "email": contact.email}
         output.append(contact_data)
-
     return {"My Contacts":output}
 
 @app.route("/contacts/<id>")
 def get_contact(id):
     contact = Contact.query.get_or_404(id)
     return {"Mobile": contact.phone_number, "Name": contact.name, "Email": contact.email}
+
+@app.route("/contacts", methods=["POST"]) 
+
+def add_contact(): 
+    contact = Contact(phone_number=request.json["phone_number"], name=request.json["name"], email=request.json["email"]) 
+    db.session.add(contact) 
+    db.session.commit()
+    return "Successfully added"
