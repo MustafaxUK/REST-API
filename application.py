@@ -35,3 +35,12 @@ def add_contact():
     db.session.add(contact) 
     db.session.commit()
     return "Successfully added"
+
+@app.route("/contacts/<id>", methods=["DELETE"])
+def delete_contact(id):
+    contact = Contact.query.get(id)
+    if contact is None:
+        return {"Error": "Not found"}
+    db.session.delete(contact)
+    db.session.commit()
+    return {"Message": "Deleted"}
