@@ -8,7 +8,7 @@ REQUIREMENTS
  -- Windows --
 
  Run start & search for cmd
- Check if Python is installed by running: Python
+ Check if Python is installed by running: Python3
  if Python is an unrecognized command install the latest version of Python in the Microsoft Store
 
  -- macOS -- 
@@ -22,23 +22,31 @@ REQUIREMENTS
  $ brew install python
 
 
-2. After you have successfully installed Python make sure you have the latest version and if not upgrade it
+2. Make sure that PIP is installed 
 
- -- Windows --
+ -- Windows/macOS --
 
-    2.1 Check version using:
+ Open your terminal
+ Check if PIP3 is installed by typing: pip3 --version
 
-    python --version
+ if PIP3 is not installed then download the get pip file from this link and store it in the same directory as Python is installed:
 
-    2.2 Upgrade Python using:
+ https://bootstrap.pypa.io/get-pip.py
 
-    
+ Now open your terminal again, change the current path of the directory to the directory where the file exists and type:
 
- -- macOS -- 
+ python get-pip.py
 
-    python --version
+ You should now have successfully installed pip
+
+ if you want to confirm that pip has been installed you can do so by running again:
+
+ pip3 --version or pip -V
 
 
+ 3. Setting up a virtual environment
+
+ 
 
 1. Clone the git repository and create and environment
 
