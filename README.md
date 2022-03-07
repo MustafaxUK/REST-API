@@ -1,59 +1,107 @@
-Set up & Installation
-
-
-REQUIREMENTS
-
-1. Make sure that Python is installed
-
- -- Windows --
-
- Run start & search for cmd
- Check if Python is installed by running: Python3
- if Python is an unrecognized command install the latest version of Python in the Microsoft Store
-
- -- macOS -- 
- 
- If you have not installed Homebrew yet, install Homebrew by copy and pasting this in the terminal:
-
- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
- Open Homebrew and install python by copy and pasting:
-
- $ brew install python
-
-
-2. Make sure that PIP is installed 
-
- -- Windows/macOS --
-
- Open your terminal
- Check if PIP3 is installed by typing: pip3 --version
-
- if PIP3 is not installed then download the get pip file from this link and store it in the same directory as Python is installed:
-
- https://bootstrap.pypa.io/get-pip.py
-
- Now open your terminal again, change the current path of the directory to the directory where the file exists and type:
-
- python get-pip.py
-
- You should now have successfully installed pip
-
- if you want to confirm that pip has been installed you can do so by running again:
-
- pip3 --version or pip -V
-
-
- 3. Setting up a virtual environment
-
- 
-
-1. Clone the git repository and create and environment
+SET UP
+1. Clone the git repository
 
  -- Windows --
 
  git clone https://github.com/MustafaxUK/REST-API.git
 
- -- macOS --
+ -- macOS/linux --
 
  git clone https://github.com/MustafaxUK/REST-API.git
+
+ 2. Activate the virtual environment
+  
+  -- Windows --
+ 
+ Open the terminal and move to the directory where the cloned repository is located. You can move a directory by typing "cd" and then the next folder you want to go into. For example: 
+
+ cd Documents
+
+ Do that until you are in the "Scripts" folder. For example:
+
+ cd Documents/REST-API/.venv/Scripts
+
+ Now that you are in the Scripts folder run:
+
+ activate
+
+ You should now see the .venv in the beginning
+
+   -- macOS/linux --
+ 
+ Open the terminal and move to the directory where the cloned repository is located. You can move a directory by typing "cd" and then the next folder you want to go into. For example: 
+
+ cd Documents
+
+ Do that until you are in the "Scripts" folder. For example:
+
+ cd Documents/REST-API/.venv/Scripts
+
+ Now that you are in the Scripts folder run:
+
+ source activate
+
+ You should now see the .venv in the beginning
+
+ 3. Move down to the REST-API folder
+
+ -- Windows --
+ 
+ You can move down a folder by simply typing:
+
+ cd..
+
+ Do so until you are at the REST-API folder
+
+ -- macOS/linux --
+ 
+ You can move down a folder by simply typing:
+
+ cd ..
+
+ Do so until you are at the REST-API folder
+
+ 4. Set FLASK_APP=application.py and run flask run
+
+  -- Windows --
+
+  Open the terminal and type:
+
+ set FLASK_APP=application.py
+
+ After you have set FLASK_APP you can type:
+
+ flask run
+
+ You should now get a few messages and the url to access the contacts
+
+ -- macOS/linux --
+
+ Open the terminal and type:
+
+ export FLASK_APP=application.py
+
+ After you have set FLASK_APP you can type:
+
+ flask run
+
+ You should now get a few messages and the url to access the contacts
+
+
+FUNCTIONALITY
+
+1. Getting all the contacts
+
+
+
+2. Getting a contact by id
+
+
+
+3. Adding a contact
+
+
+
+
+4. Deleting a contact
+
